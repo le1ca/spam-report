@@ -89,7 +89,7 @@ def make_report_trailer():
 
 def make_report(spam_list, conf):
     date = datetime.now().strftime("%a %b %d %Y")
-    spam_list = sorted(spam_list, key=lambda s: s.score)
+    spam_list = sorted(spam_list, key=lambda s: float(s.score))
     total_size = len(spam_list)
     spam_list = spam_list[:conf.max_report]
 
